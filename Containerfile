@@ -2,7 +2,7 @@
 FROM registry.redhat.io/rhel9-eus/rhel-9.6-bootc:9.6
 
 # install edge manager (flightctl) agent
-RUN dnf --enablerepo ansible-automation-platform-2.5-for-rhel-9-x86_64-rpms -y install flightctl-agent && \
+RUN dnf --enablerepo rhacm-2.13-for-rhel-9-x86_64-rpms -y install flightctl-agent && \
     dnf -y clean all && \
     systemctl enable flightctl-agent.service && \
     systemctl mask bootc-fetch-apply-updates.timer
